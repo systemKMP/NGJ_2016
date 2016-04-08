@@ -14,20 +14,16 @@ public class MovementController : MonoBehaviour {
     private bool _changeVelocity;
 
     SteamVR_TrackedObject trackedObj;
-    FixedJoint joint;
 
     SteamVR_Controller.Device Device;
 
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-
     }
 
     void Update()
     {
-
-
         if (Device != null)
         {
             MovementBase.transform.position += _velocity * Time.deltaTime;
@@ -61,17 +57,16 @@ public class MovementController : MonoBehaviour {
         //{
 
         //}
-        if (joint == null && Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             _changeVelocity = true;
 
         }
 
-        if (joint == null && Device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
+        if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
         {
             _changeVelocity = false;
         }
 
-        Debug.Log(_changeVelocity);
     }
 }
