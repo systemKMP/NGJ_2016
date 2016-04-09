@@ -17,6 +17,14 @@ public class MovementController : MonoBehaviour {
 
     SteamVR_Controller.Device Device;
 
+    public AudioSource WindAudio;
+
+    public float MaxAmplitude;
+    public float MinWinSoundSpeed;
+    public float MaxWinSoundSpeed;
+    public float StartWindPitch;
+    public float EndWindPitch;
+
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
@@ -40,6 +48,17 @@ public class MovementController : MonoBehaviour {
                 _velocity = Vector3.MoveTowards(_velocity, direction * MaxSpeed, Time.deltaTime * MaxAcceleration * intensity * accelMultiplier);
             }
         }
+
+        float prc = 0.0f;
+
+        if (_velocity.magnitude > MinWinSoundSpeed)
+        {
+            prc = Mathf.Min((_velocity.magnitude - MinWinSoundSpeed) / MaxWinSoundSpeed, 1.0f);
+        }
+
+        WindAudio.volume = prc * MaxAmplitude;
+        WindAudio.pitch = prc * (EndWindPitch - StartWindPitch) + StartWindPitch;
+
     }
 
     void FixedUpdate()
