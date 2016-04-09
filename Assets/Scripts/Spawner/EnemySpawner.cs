@@ -15,6 +15,8 @@ public class EnemySpawner : MonoBehaviour {
 
     public List<EnemyDefinition> Enemies;
 
+    public GameObject SpawnEffect;
+
     public float MinInterval;
     public float MaxInterval;
     private float _currentTime;
@@ -68,6 +70,7 @@ public class EnemySpawner : MonoBehaviour {
         for (int i = 0; i < count; i++)
         {
             Instantiate(EnemyDef.Enemy, positions[i], Quaternion.identity);
+            Instantiate(SpawnEffect, positions[i], Quaternion.identity);
             yield return new WaitForSeconds(InClusterSpawnInterval);
         }
     }
