@@ -70,8 +70,8 @@ public class EnemySpawner : MonoBehaviour {
         for (int i = 0; i < count; i++)
         {
             Instantiate(EnemyDef.Enemy, positions[i], Quaternion.identity);
-            Instantiate(SpawnEffect, positions[i], Quaternion.identity);
             yield return new WaitForSeconds(InClusterSpawnInterval);
+            Instantiate(SpawnEffect, positions[i], Quaternion.identity);
         }
     }
 

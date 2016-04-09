@@ -78,6 +78,7 @@ public class Revolver : WeaponBase
 
     private void LoadGun()
     {
+        DoControllerVibrate(2000);
         LoadAudio.Play();
         _ammo = MaxAmmo;
         IsLoaded = true;
@@ -86,6 +87,7 @@ public class Revolver : WeaponBase
 
     protected override void FireEffect()
     {
+        DoControllerVibrate(2000);
         Anim.SetTrigger("Shoot");
     }
 }
