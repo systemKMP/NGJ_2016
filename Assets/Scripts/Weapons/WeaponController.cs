@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WeaponController : MonoBehaviour {
 
@@ -8,9 +9,22 @@ public class WeaponController : MonoBehaviour {
 
     public WeaponBase Weapon;
 
+    public List<WeaponBase> Weapons;
+
+    private int _currentWeapon;
+
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        WeaponBase.OnVibrateController += VibrateController;
+    }
+
+    private void VibrateController(ushort time)
+    {
+        if (Device != null)
+        {
+            Device.TriggerHapticPulse(time);
+        }
     }
 
     void FixedUpdate()

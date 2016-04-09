@@ -6,6 +6,12 @@ public class SimpleEnemy : EnemyBase
 {
     public float RotationSpeed;
 
+    protected override void Start()
+    {
+        MovementSpeed *= UnityEngine.Random.Range(0.9f, 1.0f);
+        base.Start();
+    }
+
     protected override void Update()
     {
         float rotationSpeedMultiplier = (Player.Instance.transform.position - transform.position).magnitude;
