@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11477168}
   - 54: {fileID: 5430062}
   m_Layer: 0
-  m_Name: SimpleEnemy
+  m_Name: ConeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 37fdea20196c8f145836a70d9ea6cba1, type: 2}
+  - {fileID: 2100000, guid: 966515c9cf8294f4da8823006cd1df72, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -64,7 +64,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195926}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: b50c2c33b271f6245826cbfa69a9d618, type: 3}
 --- !u!54 &5430062
 Rigidbody:
   m_ObjectHideFlags: 1
