@@ -58,6 +58,7 @@ public abstract class WeaponBase : MonoBehaviour {
     {
         if (_ammo > 0)
         {
+            FireEffect();
             _ammo--;
             _currentInterval += FireInterval;
             FireProjectile();
@@ -67,6 +68,8 @@ public abstract class WeaponBase : MonoBehaviour {
             }
         }
     }
+
+    protected abstract void FireEffect();
 
     protected abstract void NoAmmoReact();
 

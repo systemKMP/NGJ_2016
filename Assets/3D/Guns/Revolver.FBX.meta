@@ -55,8 +55,9 @@ ModelImporter:
     4300014: Cylinder007
     4300016: Trigger
     4300018: Hammer
-    7400000: Take 001
-    7400002: Take 0010
+    7400000: Unload
+    7400002: GunLoad
+    7400004: Shoot
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -75,12 +76,12 @@ ModelImporter:
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationScaleError: 100
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Unload
       takeName: Take 001
       firstFrame: 0
       lastFrame: 10
@@ -128,10 +129,58 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Take 0010
+      name: GunLoad
       takeName: Take 001
       firstFrame: 12
       lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Barrel
+        weight: 1
+      - path: Barrel/Cylinder004
+        weight: 1
+      - path: Barrel/Cylinder005
+        weight: 1
+      - path: Barrel/Cylinder006
+        weight: 1
+      - path: Barrel/Cylinder007
+        weight: 1
+      - path: Barrel/Cylinder008
+        weight: 1
+      - path: Barrel/Cylinder009
+        weight: 1
+      - path: Hammer
+        weight: 1
+      - path: Trigger
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shoot
+      takeName: Take 001
+      firstFrame: 20
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
