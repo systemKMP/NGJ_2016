@@ -53,7 +53,7 @@ public class MovementController : MonoBehaviour {
 
         if (_velocity.magnitude > MinWinSoundSpeed)
         {
-            prc = Mathf.Min((_velocity.magnitude - MinWinSoundSpeed) / MaxWinSoundSpeed, 1.0f);
+            prc = Mathf.Min((_velocity.magnitude - MinWinSoundSpeed) / (MaxWinSoundSpeed - MinWinSoundSpeed), 1.0f);
         }
 
         WindAudio.volume = prc * MaxAmplitude;
