@@ -11,6 +11,8 @@ public abstract class WeaponBase : MonoBehaviour {
 
     public ProjectileBase Projectile;
 
+    public Transform BulletSpawnPossition;
+
     protected void Awake()
     {
         SetUp();
@@ -75,7 +77,8 @@ public abstract class WeaponBase : MonoBehaviour {
 
     protected virtual void FireProjectile()
     {
-        var proj = Instantiate(Projectile, transform.position + transform.rotation * Vector3.forward * 0.1f, transform.rotation) as ProjectileBase;
+
+        var proj = Instantiate(Projectile, BulletSpawnPossition.position + transform.rotation * Vector3.forward * 0.1f, transform.rotation) as ProjectileBase;
     }
 
 }
