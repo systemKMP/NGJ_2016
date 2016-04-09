@@ -13,6 +13,9 @@ public abstract class WeaponBase : MonoBehaviour {
 
     public Transform BulletSpawnPossition;
 
+    public delegate void VibrateController(ushort time);
+    public static event VibrateController OnVibrateController;
+
     protected void Awake()
     {
         SetUp();
@@ -68,6 +71,14 @@ public abstract class WeaponBase : MonoBehaviour {
             {
                 NoAmmoReact();
             }
+        }
+    }
+
+    protected void DoControllerVibrate(ushort time)
+    {
+        if (OnVibrateController != null)
+        {
+            OnVibrateController(time);
         }
     }
 
