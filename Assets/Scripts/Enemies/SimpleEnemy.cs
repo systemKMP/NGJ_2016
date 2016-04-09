@@ -18,6 +18,7 @@ public class SimpleEnemy : EnemyBase
         }
 
         Direction = Vector3.RotateTowards(Direction, (Player.Instance.transform.position - transform.position).normalized, Time.deltaTime * RotationSpeed * rotationSpeedMultiplier, Time.deltaTime);
+        transform.rotation = Quaternion.LookRotation(Direction);
         base.Update();
     }
 

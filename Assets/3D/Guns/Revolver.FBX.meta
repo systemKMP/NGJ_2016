@@ -15,6 +15,17 @@ ModelImporter:
     100014: Hammer
     100016: //RootNode
     100018: Trigger
+    100020: Bullets_00
+    100022: Bullets_01
+    100024: Bullets_02
+    100026: Bullets_03
+    100028: Bullets_04
+    100030: Bullets_05
+    100032: Gun
+    100034: gun_barrel
+    100036: gun_Hammer
+    100038: gun_root
+    100040: gun_trigger
     400000: Barrel
     400002: Cylinder004
     400004: Cylinder005
@@ -25,6 +36,17 @@ ModelImporter:
     400014: Hammer
     400016: //RootNode
     400018: Trigger
+    400020: Bullets_00
+    400022: Bullets_01
+    400024: Bullets_02
+    400026: Bullets_03
+    400028: Bullets_04
+    400030: Bullets_05
+    400032: Gun
+    400034: gun_barrel
+    400036: gun_Hammer
+    400038: gun_root
+    400040: gun_trigger
     2300000: Barrel
     2300002: Cylinder004
     2300004: Cylinder005
@@ -35,6 +57,12 @@ ModelImporter:
     2300014: Hammer
     2300016: //RootNode
     2300018: Trigger
+    2300020: Bullets_00
+    2300022: Bullets_01
+    2300024: Bullets_02
+    2300026: Bullets_03
+    2300028: Bullets_04
+    2300030: Bullets_05
     3300000: Barrel
     3300002: Cylinder004
     3300004: Cylinder005
@@ -45,6 +73,12 @@ ModelImporter:
     3300014: Hammer
     3300016: //RootNode
     3300018: Trigger
+    3300020: Bullets_00
+    3300022: Bullets_01
+    3300024: Bullets_02
+    3300026: Bullets_03
+    3300028: Bullets_04
+    3300030: Bullets_05
     4300000: Handle
     4300002: Barrel
     4300004: Cylinder009
@@ -55,10 +89,18 @@ ModelImporter:
     4300014: Cylinder007
     4300016: Trigger
     4300018: Hammer
-    7400000: Take 001
-    7400002: Take 0010
-    7400004: Take 0011
+    4300020: Gun
+    4300022: Bullets_02
+    4300024: Bullets_04
+    4300026: Bullets_00
+    4300028: Bullets_01
+    4300030: Bullets_05
+    4300032: Bullets_03
+    7400000: Unload
+    7400002: GunLoad
+    7400004: Shoot
     9500000: //RootNode
+    13700000: Gun
   materials:
     importMaterials: 1
     materialName: 0
@@ -76,12 +118,12 @@ ModelImporter:
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
-    animationScaleError: 100
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Unload
       takeName: Take 001
       firstFrame: 0
       lastFrame: 10
@@ -129,7 +171,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Take 0010
+      name: GunLoad
       takeName: Take 001
       firstFrame: 12
       lastFrame: 19
@@ -177,7 +219,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Take 0011
+      name: Shoot
       takeName: Take 001
       firstFrame: 20
       lastFrame: 24
