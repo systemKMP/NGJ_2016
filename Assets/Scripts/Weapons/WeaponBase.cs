@@ -61,10 +61,10 @@ public abstract class WeaponBase : MonoBehaviour {
             _ammo--;
             _currentInterval += FireInterval;
             FireProjectile();
-        }
-        else
-        {
-            NoAmmoReact();
+            if (_ammo == 0)
+            {
+                NoAmmoReact();
+            }
         }
     }
 
@@ -73,7 +73,6 @@ public abstract class WeaponBase : MonoBehaviour {
     protected virtual void FireProjectile()
     {
         var proj = Instantiate(Projectile, transform.position + transform.rotation * Vector3.forward * 0.1f, transform.rotation) as ProjectileBase;
-        
     }
 
 }
