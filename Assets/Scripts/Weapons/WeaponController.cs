@@ -20,6 +20,10 @@ public class WeaponController : MonoBehaviour {
             Device = SteamVR_Controller.Input((int)trackedObj.index);
         }
 
+        float intensity = Device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x;
+
+
+
         if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             Weapon.StartFire();
@@ -28,7 +32,12 @@ public class WeaponController : MonoBehaviour {
         if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
         {
             Weapon.StopFire();
+        }
 
+
+        if (intensity < 0.05f)
+        {
+            Weapon.StopFire();
         }
     }
 }
