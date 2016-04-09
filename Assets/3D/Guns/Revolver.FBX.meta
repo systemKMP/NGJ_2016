@@ -149,23 +149,27 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Barrel
+      - path: Gun
         weight: 1
-      - path: Barrel/Cylinder004
+      - path: gun_root
         weight: 1
-      - path: Barrel/Cylinder005
+      - path: gun_root/gun_barrel
         weight: 1
-      - path: Barrel/Cylinder006
+      - path: gun_root/gun_barrel/Bullets_00
         weight: 1
-      - path: Barrel/Cylinder007
+      - path: gun_root/gun_barrel/Bullets_01
         weight: 1
-      - path: Barrel/Cylinder008
+      - path: gun_root/gun_barrel/Bullets_02
         weight: 1
-      - path: Barrel/Cylinder009
+      - path: gun_root/gun_barrel/Bullets_03
         weight: 1
-      - path: Hammer
+      - path: gun_root/gun_barrel/Bullets_04
         weight: 1
-      - path: Trigger
+      - path: gun_root/gun_barrel/Bullets_05
+        weight: 1
+      - path: gun_root/gun_Hammer
+        weight: 1
+      - path: gun_root/gun_trigger
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -197,23 +201,27 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Barrel
+      - path: Gun
         weight: 1
-      - path: Barrel/Cylinder004
+      - path: gun_root
         weight: 1
-      - path: Barrel/Cylinder005
+      - path: gun_root/gun_barrel
         weight: 1
-      - path: Barrel/Cylinder006
+      - path: gun_root/gun_barrel/Bullets_00
         weight: 1
-      - path: Barrel/Cylinder007
+      - path: gun_root/gun_barrel/Bullets_01
         weight: 1
-      - path: Barrel/Cylinder008
+      - path: gun_root/gun_barrel/Bullets_02
         weight: 1
-      - path: Barrel/Cylinder009
+      - path: gun_root/gun_barrel/Bullets_03
         weight: 1
-      - path: Hammer
+      - path: gun_root/gun_barrel/Bullets_04
         weight: 1
-      - path: Trigger
+      - path: gun_root/gun_barrel/Bullets_05
+        weight: 1
+      - path: gun_root/gun_Hammer
+        weight: 1
+      - path: gun_root/gun_trigger
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -245,23 +253,27 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Barrel
+      - path: Gun
         weight: 1
-      - path: Barrel/Cylinder004
+      - path: gun_root
         weight: 1
-      - path: Barrel/Cylinder005
+      - path: gun_root/gun_barrel
         weight: 1
-      - path: Barrel/Cylinder006
+      - path: gun_root/gun_barrel/Bullets_00
         weight: 1
-      - path: Barrel/Cylinder007
+      - path: gun_root/gun_barrel/Bullets_01
         weight: 1
-      - path: Barrel/Cylinder008
+      - path: gun_root/gun_barrel/Bullets_02
         weight: 1
-      - path: Barrel/Cylinder009
+      - path: gun_root/gun_barrel/Bullets_03
         weight: 1
-      - path: Hammer
+      - path: gun_root/gun_barrel/Bullets_04
         weight: 1
-      - path: Trigger
+      - path: gun_root/gun_barrel/Bullets_05
+        weight: 1
+      - path: gun_root/gun_Hammer
+        weight: 1
+      - path: gun_root/gun_trigger
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
