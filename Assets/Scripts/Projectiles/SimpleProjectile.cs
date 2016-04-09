@@ -7,4 +7,5 @@ public class SimpleProjectile : ProjectileBase {
     {
         Velocity = transform.rotation * Vector3.forward * StartVelocity + Player.Instance.MovController._velocity * 0.95f;
     }
+
 }
