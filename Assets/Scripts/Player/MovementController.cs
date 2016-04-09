@@ -32,10 +32,7 @@ public class MovementController : MonoBehaviour {
             {
                 float intensity = Device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x;
 
-                Debug.Log(Device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger));
-
                 float accelMultiplier = 1.0f;
-
 
                 Vector3 direction = (transform.position - Head.position).normalized;
 

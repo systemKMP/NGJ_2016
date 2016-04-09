@@ -169,7 +169,7 @@ Prefab:
     - target: {fileID: 3386322, guid: 7fc2d289c154de345bd9d36af7a69086, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2033088541}
+      objectReference: {fileID: 2055613860}
     - target: {fileID: 2007280, guid: 7fc2d289c154de345bd9d36af7a69086, type: 2}
       propertyPath: m_ClearFlags
       value: 2
@@ -223,6 +223,58 @@ MonoBehaviour:
   _ears: {fileID: 583392726}
   wireframe: 0
   flip: {fileID: 583392728}
+--- !u!1 &969050660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 969050662}
+  - 114: {fileID: 969050661}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &969050661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969050660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496136342914a9c449eec7f8a63eec48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemies:
+  - Enemy: {fileID: 11477168, guid: 94dd5ef7574c3084a89575016f008b7a, type: 2}
+    Value: 20
+  MinInterval: 3
+  MaxInterval: 10
+  StartingPointGainSpeed: 5
+  PointGainClimb: 0.2
+  PointGainSpeed: 0
+  MinSpawnDist: 10
+  MaxSpawnDist: 30
+  MinClusterSize: 5
+  MaxClusterSize: 15
+  InClusterSpawnInterval: 0.5
+--- !u!4 &969050662
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969050660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -128.5662, y: 20.203636, z: -30.458921}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1771455594
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +336,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!43 &2033088541
+--- !u!43 &2055613860
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

@@ -7,6 +7,8 @@ public abstract class ProjectileBase : MonoBehaviour {
 
     protected Vector3 Velocity;
 
+    public int Damage;
+
     protected virtual void Awake()
     {
         Destroy(gameObject, 7.0f);
