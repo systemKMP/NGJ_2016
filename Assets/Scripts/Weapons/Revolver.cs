@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class Revolver : WeaponBase
 {
@@ -83,5 +84,8 @@ public class Revolver : WeaponBase
         Anim.SetBool("Loaded", true);
     }
 
-
+    protected override void FireEffect()
+    {
+        Anim.SetTrigger("Shoot");
+    }
 }
