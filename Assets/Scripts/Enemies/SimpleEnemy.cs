@@ -22,7 +22,7 @@ public class SimpleEnemy : EnemyBase
             rotationSpeedMultiplier = 0.0f;
         } else
         {
-            rotationSpeedMultiplier = (rotationSpeedMultiplier - 6.0f) / 10.0f;
+            rotationSpeedMultiplier = (rotationSpeedMultiplier - 6.0f) / 50.0f;
         }
 
         Direction = Vector3.RotateTowards(Direction, (Player.Instance.transform.position - transform.position).normalized, Time.deltaTime * RotationSpeed * rotationSpeedMultiplier, Time.deltaTime);
