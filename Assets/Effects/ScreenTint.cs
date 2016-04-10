@@ -13,6 +13,8 @@ public class ScreenTint : MonoBehaviour {
 
     public bool fadeInTint, fadeOutTint, stayAction, triggerStay;
 
+    bool initialised;
+
     float timeFadeIn, timeFadeOut, timeStay;
 
     Image imageComponent;
@@ -20,8 +22,17 @@ public class ScreenTint : MonoBehaviour {
 
     void Start()
     {
-        fadeInTint = false;
-        imageComponent = gameObject.GetComponent<Image>();
+        InitialiseTintComponent();            
+    }
+
+    public void InitialiseTintComponent()
+    {
+        if (!initialised)
+        {
+            initialised = true;
+            fadeInTint = false;
+            imageComponent = gameObject.GetComponent<Image>();
+        }
     }
 
     //Trigger a Fade In Action
