@@ -15,9 +15,12 @@ public class Blaster : WeaponBase
         base.OnEnable();
         LoadParticleA.Stop();
         LoadParticleB.Stop();
-    }
 
-    
+
+        IsFiring = false;
+        CanFire = false;
+        _isGripping = false;
+    }
 
     protected override void FireEffect()
     {
