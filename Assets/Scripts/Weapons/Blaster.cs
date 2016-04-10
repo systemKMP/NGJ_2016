@@ -32,7 +32,7 @@ public class Blaster : WeaponBase
     {
         if (_isGripping && _ammo < MaxAmmo)
         {
-            if (loadCount >= 5)
+            if (loadCount >= 2)
             {
                 _ammo++;
                 DoControllerVibrate(2000);
@@ -47,9 +47,16 @@ public class Blaster : WeaponBase
 
     private bool _isGripping = false;
 
+    public override void StartFire()
+    {
+        base.StartFire();
+        StopGrip();
+    }
+
     public override void StartGrip()
     {
         base.StartGrip();
+        StopFire();
         _isGripping = true;
         LoadSound.Play();
 
