@@ -15,6 +15,9 @@ public class Revolver : WeaponBase
 
     public AudioSource LoadAudio;
     public AudioSource UnloadAudio;
+    public AudioSource ShootAudio;
+
+    public Transform BarrelTrans;
 
     protected override void NoAmmoReact()
     {
@@ -28,6 +31,22 @@ public class Revolver : WeaponBase
     public List<float> Velocities;
     public Quaternion PreviousRotation;
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        CanFire = true;
+        if (_ammo > 0)
+        {
+            Anim.SetBool("Loaded", true);
+        }
+    }
+
+    protected void OnDisable()
+    {
+        BarrelTrans.localRotation = Quaternion.identity;
+        Anim.SetBool("Loaded", true);
+    }
+
     protected override void Update()
     {
         base.Update();
@@ -35,6 +54,10 @@ public class Revolver : WeaponBase
 
     void FixedUpdate()
     {
+        //if (Anim.GetCurrentAnimatorStateInfo(0).IsTag("Idle"))
+        //{
+        //    Debug.Log("Fixing");
+        //}
         if (!IsLoaded)
         {
             var currentRotation = transform.rotation;
@@ -85,6 +108,7 @@ public class Revolver : WeaponBase
 
     protected override void FireEffect()
     {
+        ShootAudio.Play();
         DoControllerVibrate(2000);
         Anim.SetTrigger("Shoot");
     }
