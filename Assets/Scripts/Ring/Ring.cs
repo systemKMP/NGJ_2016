@@ -32,12 +32,13 @@ public class Ring : MonoBehaviour {
         {
             is_vanishing = true;
             StartCoroutine("VanishRing");
-            Player.Instance.Score++;
+           // Player.Instance.Score++;
         }
     }
 
     IEnumerator VanishRing()
     {
+        Debug.Log(ringMat);
         color = ringMat.color;
 
         RunCallback();
