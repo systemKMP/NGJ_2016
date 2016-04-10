@@ -16,9 +16,10 @@ public abstract class WeaponBase : MonoBehaviour {
     public delegate void VibrateController(ushort time);
     public static event VibrateController OnVibrateController;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         SetUp();
+        CanFire = true;
     }
 
     protected void SetUp()
@@ -27,10 +28,21 @@ public abstract class WeaponBase : MonoBehaviour {
     }
 
     protected bool IsFiring;
+    protected bool CanFire;
 
     public void StartFire()
     {
         IsFiring = true;
+    }
+
+    public virtual void StartGrip()
+    {
+
+    }
+
+    public virtual void StopGrip()
+    {
+
     }
 
     public void StopFire()
@@ -88,7 +100,6 @@ public abstract class WeaponBase : MonoBehaviour {
 
     protected virtual void FireProjectile()
     {
-
         var proj = Instantiate(Projectile, BulletSpawnPossition.position + transform.rotation * Vector3.forward * 0.1f, transform.rotation) as ProjectileBase;
     }
 

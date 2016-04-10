@@ -4,9 +4,54 @@ using System;
 
 public class Blaster : WeaponBase
 {
+    public ParticleSystem LoadParticleA;
+    public ParticleSystem LoadParticleB;
+
+
+    public AudioSource LoadSound;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        LoadParticleA.Stop();
+        LoadParticleB.Stop();
+    }
+
     protected override void FireEffect()
     {
 
+    }
+
+    void FixedUpdate()
+    {
+        if (_isGripping && _ammo < MaxAmmo)
+        {
+            _ammo++;
+        }
+    }
+
+    private bool _isGripping = false;
+
+    public override void StartGrip()
+    {
+        base.StartGrip();
+        _isGripping = true;
+        LoadSound.Play();
+
+        LoadParticleA.Play();
+        LoadParticleB.Play();
+
+        IsFiring = false;
+    }
+
+    public override void StopGrip()
+    {
+        base.StopGrip();
+        _isGripping = false;
+        LoadSound.Stop();
+
+        LoadParticleA.Stop();
+        LoadParticleB.Stop();
     }
 
     protected override void NoAmmoReact()
