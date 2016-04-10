@@ -10,40 +10,38 @@ public class Ring : MonoBehaviour {
     bool is_vanishing = false;
     RingMananger ringManager;
 
+    public AudioSource Audio;
+
     public delegate void RingComplete();
     public static event RingComplete OnComplete;
-    //Ring.RingComplete callback;
 
-    // Use this for initialization
     void Start () {
         coll = GetComponent<Collider>();
         mr = GetComponent<MeshRenderer>();
         ringMat = mr.material;
         ringManager = GetComponent<RingMananger>();
-        Debug.Log(OnComplete);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	    
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggedd");
-        if(other.tag=="Player" && !is_vanishing)
+        if(other.gameObject.layer == 9 && !is_vanishing)
         {
-            Debug.Log("Player hit");
             is_vanishing = true;
             StartCoroutine("VanishRing");
+            Player.Instance.Score++;
         }
     }
 
-
     IEnumerator VanishRing()
     {
-        Debug.Log("VAnish");
         color = ringMat.color;
+
+        RunCallback();
+
         while (color.a>-0.01f)
         {
             Debug.Log(color);
@@ -51,17 +49,14 @@ public class Ring : MonoBehaviour {
             ringMat.color = color;
             yield return null;
         }
-        RunCallback();
-        Destroy(gameObject);
+        Destroy(gameObject, 2.0f);
     }
 
     void RunCallback()
     {
-        Debug.Log("Run callback called");
         
         if (OnComplete != null)
         {
-            Debug.Log("oncomplete not called");
             OnComplete();
         }
     }
