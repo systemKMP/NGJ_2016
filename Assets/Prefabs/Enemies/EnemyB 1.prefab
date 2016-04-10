@@ -143,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 189290}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.055, z: -0.081}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
   - {fileID: 400772}
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 10
   MovementSpeed: 70
+  MaxOffset: 50
   RotationSpeed: 0.25
   ActivatedFire: 0
   FiringNow: 0
@@ -253,7 +254,7 @@ MonoBehaviour:
   Projectile: {fileID: 119178, guid: fcfc3c174311d3b46aa41118965a9241, type: 2}
   FirePoint: {fileID: 400772}
   BulletsToFire: 3
-  FireInterval: 0.3
+  FireInterval: 0.6
 --- !u!135 &13561506
 SphereCollider:
   m_ObjectHideFlags: 1

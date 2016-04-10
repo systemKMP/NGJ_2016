@@ -4,6 +4,9 @@ using System;
 
 public class FiringEnemy : EnemyBase
 {
+    private Vector3 _targetOffset;
+    public float MaxOffset;
+
     public float RotationSpeed;
 
     public bool ActivatedFire;
@@ -20,6 +23,7 @@ public class FiringEnemy : EnemyBase
     protected override void Start()
     {
         base.Start();
+        _targetOffset = UnityEngine.Random.rotation * Vector3.forward * UnityEngine.Random.value * MaxOffset;
     }
 
     public int BulletsToFire;
@@ -42,12 +46,12 @@ public class FiringEnemy : EnemyBase
                 rotationSpeedMultiplier = (rotationSpeedMultiplier - 6.0f) / 50.0f;
             }
 
-            Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.Velocity.normalized * 50.0f - transform.position).normalized, Time.deltaTime * RotationSpeed * rotationSpeedMultiplier, Time.deltaTime);
+            Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.transform.position +  Player.Instance.MovController.Velocity.normalized * 220.0f + _targetOffset - transform.position).normalized, Time.deltaTime * RotationSpeed * rotationSpeedMultiplier, Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Direction);
 
-            Debug.Log((Player.Instance.MovController.transform.position + Player.Instance.MovController.Velocity.normalized * 50.0f - transform.position).magnitude);
+            //Debug.Log((Player.Instance.MovController.transform.position + Player.Instance.MovController.Velocity.normalized * 220.0f + _targetOffset - transform.position).magnitude);
 
-            if ((Player.Instance.MovController.transform.position + Player.Instance.MovController.Velocity.normalized * 150.0f - transform.position).magnitude < 30.0f)
+            if ((Player.Instance.MovController.transform.position + Player.Instance.MovController.Velocity.normalized * 220.0f + _targetOffset - transform.position).magnitude < 30.0f)
             {
                 ActivateFire();
             }
@@ -56,7 +60,7 @@ public class FiringEnemy : EnemyBase
         {
             SpeedMultiplier = Mathf.MoveTowards(SpeedMultiplier, 0.0f, Time.deltaTime);
 
-            Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.Head.transform.position - transform.position).normalized, Time.deltaTime * RotationSpeed, Time.deltaTime);
+            Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.Head.transform.position - transform.position).normalized, Time.deltaTime * RotationSpeed * 20.0f, Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Direction);
 
             if (SpeedMultiplier < 0.05f)
@@ -79,7 +83,7 @@ public class FiringEnemy : EnemyBase
         for (int i = 0; i < BulletsToFire; i++)
         {
             yield return new WaitForSeconds(FireInterval);
-            Instantiate(Projectile, FirePoint.transform.position, Quaternion.LookRotation(Player.Instance.MovController.Head.transform.position + Player.Instance.MovController.Velocity * 1.5f - FirePoint.transform.position));
+            Instantiate(Projectile, FirePoint.transform.position, Quaternion.LookRotation(Player.Instance.MovController.Head.transform.position + Player.Instance.MovController.Velocity * 0.5f - FirePoint.transform.position));
         }
         FiringNow = false;
         ActivatedFire = false;
