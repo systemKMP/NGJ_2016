@@ -45,8 +45,9 @@ public class FiringEnemy : EnemyBase
             Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.Velocity.normalized * 50.0f - transform.position).normalized, Time.deltaTime * RotationSpeed * rotationSpeedMultiplier, Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Direction);
 
+            Debug.Log((Player.Instance.MovController.transform.position + Player.Instance.MovController.Velocity.normalized * 50.0f - transform.position).magnitude);
 
-            if ((Player.Instance.MovController.Velocity.normalized * 50.0f - transform.position).magnitude < 10.0f)
+            if ((Player.Instance.MovController.transform.position + Player.Instance.MovController.Velocity.normalized * 150.0f - transform.position).magnitude < 30.0f)
             {
                 ActivateFire();
             }
@@ -81,6 +82,7 @@ public class FiringEnemy : EnemyBase
             Instantiate(Projectile, FirePoint.transform.position, Quaternion.LookRotation(Player.Instance.MovController.Head.transform.position + Player.Instance.MovController.Velocity * 1.5f - FirePoint.transform.position));
         }
         FiringNow = false;
+        ActivatedFire = false;
         DisableFire();
     }
 
