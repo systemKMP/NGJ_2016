@@ -10,12 +10,14 @@ public class Blaster : WeaponBase
 
     public AudioSource LoadSound;
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
-        base.Awake();
+        base.OnEnable();
         LoadParticleA.Stop();
         LoadParticleB.Stop();
     }
+
+    
 
     protected override void FireEffect()
     {

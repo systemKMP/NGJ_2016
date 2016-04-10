@@ -19,6 +19,10 @@ public abstract class WeaponBase : MonoBehaviour {
     protected virtual void Awake()
     {
         SetUp();
+    }
+
+    protected virtual void OnEnable()
+    {
         CanFire = true;
     }
 

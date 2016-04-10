@@ -231,7 +231,9 @@ GameObject:
   - 114: {fileID: 11455262}
   - 92: {fileID: 9208940}
   - 82: {fileID: 8216766}
-  m_Layer: 0
+  - 135: {fileID: 13508210}
+  - 54: {fileID: 5486058}
+  m_Layer: 9
   m_Name: Main Camera (head)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1308,7 +1310,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children: []
   m_Father: {fileID: 412342}
   m_RootOrder: 1
@@ -2052,6 +2054,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110586}
   m_Mesh: {fileID: 4300028, guid: 4f12b72903177a043bb72202b2cedab3, type: 3}
+--- !u!54 &5486058
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121240}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!65 &6534966
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3159,6 +3176,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104502}
   m_Enabled: 1
+--- !u!135 &13508210
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13783694
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

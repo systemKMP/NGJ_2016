@@ -64,7 +64,6 @@ public class WeaponController : MonoBehaviour {
 
         if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
         {
-            Debug.Log("Touch");
             GiveNextGun();
         }
 
