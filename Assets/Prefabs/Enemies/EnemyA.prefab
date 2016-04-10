@@ -35,6 +35,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< .merge_file_a08860
+=======
 --- !u!1 &167288
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +54,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+>>>>>>> .merge_file_a08216
 --- !u!1 &168180
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +100,10 @@ Transform:
   m_Children:
   - {fileID: 405842}
   - {fileID: 490926}
+<<<<<<< .merge_file_a08860
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+=======
   - {fileID: 473608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,6 +120,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 407652}
   m_RootOrder: 2
+>>>>>>> .merge_file_a08216
 --- !u!4 &490926
 Transform:
   m_ObjectHideFlags: 1
@@ -174,6 +182,8 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< .merge_file_a08860
+=======
 --- !u!54 &5489306
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -189,6 +199,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+>>>>>>> .merge_file_a08216
 --- !u!82 &8213260
 AudioSource:
   m_ObjectHideFlags: 1
@@ -292,7 +303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 10
+<<<<<<< .merge_file_a08860
+  MovementSpeed: 67
+=======
   MovementSpeed: 56
+>>>>>>> .merge_file_a08216
   RotationSpeed: 0.3
   DeathEffect: {fileID: 152420, guid: 84816d01be0d1c8499a43097133f1d30, type: 2}
 --- !u!136 &13657104
@@ -308,6 +323,8 @@ CapsuleCollider:
   m_Height: 2.33
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.33}
+<<<<<<< .merge_file_a08860
+=======
 --- !u!136 &13664616
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -321,6 +338,7 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.49}
+>>>>>>> .merge_file_a08216
 --- !u!198 &19890034
 ParticleSystem:
   m_ObjectHideFlags: 1
