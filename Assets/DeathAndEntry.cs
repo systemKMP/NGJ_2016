@@ -3,10 +3,9 @@ using System.Collections;
 
 public class DeathAndEntry : MonoBehaviour {
 
-    GameObject WhiteTintObject;
-    ScreenTint WhiteTintComponent;
+    public ScreenTint WhiteTintComponent;
 
-    AudioSource WhiteNoiseSource;
+    public AudioSource WhiteNoiseSource;
 
     public float FadeInSoundTransition, FadeOutSoundTransition;
     public float maxVolume;
@@ -18,11 +17,8 @@ public class DeathAndEntry : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        WhiteTintObject = GameObject.Find("WhiteVision");
-        WhiteTintComponent = WhiteTintObject.GetComponent<ScreenTint>();
         WhiteTintComponent.InitialiseTintComponent();
 
-        WhiteNoiseSource = GameObject.Find("WhiteNoise").GetComponent<AudioSource>();
         TheBeginning();
         // TheEnd();
 	}

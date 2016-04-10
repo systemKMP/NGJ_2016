@@ -32,7 +32,7 @@ public class Ring : MonoBehaviour {
         {
             is_vanishing = true;
             StartCoroutine("VanishRing");
-           // Player.Instance.Score++;
+            Player.Instance.Score++;
         }
     }
 
