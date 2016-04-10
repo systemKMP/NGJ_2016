@@ -16,22 +16,32 @@ public class Blaster : WeaponBase
         LoadParticleA.Stop();
         LoadParticleB.Stop();
 
-
         IsFiring = false;
         CanFire = false;
         _isGripping = false;
     }
 
+    int loadCount = 0;
+
     protected override void FireEffect()
     {
-
+        DoControllerVibrate(2000);
     }
 
     void FixedUpdate()
     {
         if (_isGripping && _ammo < MaxAmmo)
         {
-            _ammo++;
+            if (loadCount >= 5)
+            {
+                _ammo++;
+                DoControllerVibrate(2000);
+                loadCount = 0;
+            }
+            else
+            {
+                loadCount++;
+            }
         }
     }
 
@@ -64,6 +74,5 @@ public class Blaster : WeaponBase
 
     protected override void NoAmmoReact()
     {
-
     }
 }
