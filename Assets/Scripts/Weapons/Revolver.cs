@@ -19,6 +19,12 @@ public class Revolver : WeaponBase
 
     public Transform BarrelTrans;
 
+    protected override void Awake()
+    {
+        IsLoaded = true;
+        base.Awake();
+    }
+
     protected override void NoAmmoReact()
     {
         UnloadAudio.Play();

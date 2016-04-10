@@ -11,17 +11,30 @@ public class ScreenTint : MonoBehaviour {
     public float StayTime; //How long it stays on
     public float TurnOffTime; //Time to 0
 
-    public bool fadeInTint, fadeOutTint, stayAction, triggerStay;
+    public bool fadeInTint, fadeOutTint, stayAction, triggerStay, StartFadeInCheck, StartFadeOutCheck;
+
+    bool initialised;
 
     float timeFadeIn, timeFadeOut, timeStay;
 
     Image imageComponent;
     float currentAlpha;
 
+    public AudioSource PainSoundSource;
+
     void Start()
     {
-        fadeInTint = false;
-        imageComponent = gameObject.GetComponent<Image>();
+        InitialiseTintComponent();            
+    }
+
+    public void InitialiseTintComponent()
+    {
+        if (!initialised)
+        {
+            initialised = true;
+            fadeInTint = false;
+            imageComponent = gameObject.GetComponent<Image>();
+        }
     }
 
     //Trigger a Fade In Action
@@ -31,6 +44,11 @@ public class ScreenTint : MonoBehaviour {
         currentAlpha = imageComponent.color.a * 255;
         fadeInTint = true;
         timeFadeIn = 0;
+
+        if (PainSoundSource != null)
+        {
+            PainSoundSource.Play();
+        }
     }
 
     //Trigger a Fade In Action then it will wait X seconds to Fade Out again
@@ -50,6 +68,11 @@ public class ScreenTint : MonoBehaviour {
                 float newAlpha = Mathf.Lerp(currentAlpha, maxAlpha, timeFadeIn);
                 Color newColor = new Color(imageComponent.color.r, imageComponent.color.g, imageComponent.color.b, newAlpha/255f);
                 imageComponent.color = newColor;
+
+                if (PainSoundSource != null)
+                {
+                    PainSoundSource.volume = newAlpha / 255f;
+                }
             }
             else
             {
@@ -75,6 +98,11 @@ public class ScreenTint : MonoBehaviour {
         currentAlpha = imageComponent.color.a*255;
         fadeOutTint = true;
         timeFadeOut = 0;
+
+        if (PainSoundSource != null)
+        {
+            PainSoundSource.Play();
+        }
     }
 
     void FadeOutAction()
@@ -87,6 +115,11 @@ public class ScreenTint : MonoBehaviour {
                 float newAlpha = Mathf.Lerp(currentAlpha, 0, timeFadeOut);
                 Color newColor = new Color(imageComponent.color.r, imageComponent.color.g, imageComponent.color.b, newAlpha / 255f);
                 imageComponent.color = newColor;
+
+                if (PainSoundSource != null)
+                {
+                    PainSoundSource.volume = newAlpha / 255f;
+                }
             }
             else
             {
@@ -98,6 +131,11 @@ public class ScreenTint : MonoBehaviour {
     void StopFadeOut()
     {
         fadeOutTint = false;
+
+        if (PainSoundSource != null)
+        {
+            PainSoundSource.Stop();
+        }
     }
 
     void CheckStay()
@@ -119,6 +157,18 @@ public class ScreenTint : MonoBehaviour {
     }
 
     void Update () {
+        if (StartFadeInCheck)
+        {
+            StartFadeInCheck = false;
+            StartFadeIn();
+        }
+
+        if (StartFadeOutCheck)
+        {
+            StartFadeOutCheck = false;
+            StartFadeOut();
+        }
+
         FadeInAction();
         CheckStay();
         FadeOutAction();

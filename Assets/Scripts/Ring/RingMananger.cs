@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class RingMananger : MonoBehaviour {
 
     public GameObject ring;
-    public List<Vector3> positions;
+    //public List<Vector3> positions;
     public float nextRingDistance;
     public float nextRingRandomXY;
 
@@ -44,8 +44,30 @@ public class RingMananger : MonoBehaviour {
     // Creates a Ring at position given
     void CreateRing(Vector3 position)
     {
-        Debug.Log("Created Ring at " + positions);
-        Instantiate(ring,position,Quaternion.Euler(90f,0f,0f));
+        Debug.Log("Created Ring at " + position);
+        Object obj = Instantiate(ring,position,Quaternion.Euler(90f,0f,0f));
+        GameObject gb = (GameObject)obj;
+        Ring thering = gb.GetComponent<Ring>();
+        StartCoroutine("FadeInRing", thering);
+    }
+
+    IEnumerator FadeInRing(Ring thering)
+    {
+        MeshRenderer mr = thering.GetComponent<MeshRenderer>();
+        Material mat = mr.material;
+        Color color = mat.color;
+        float MaxA = color.a;
+        color.a = 0;
+        mat.color = color;
+        while(color.a< MaxA)
+        {
+            color.a += Time.deltaTime * MaxA / 0.5f;
+            mat.color = color;
+            yield return null;
+        }
+
+        color.a = MaxA;
+        mat.color = color;
     }
 
     Vector3 NextRingPosition()
@@ -59,11 +81,8 @@ public class RingMananger : MonoBehaviour {
     
     public void RingComplete()
     {
-        Debug.Log("Ring Complete called");
-
-        if (index < maxRings)    //positions.Count)
+        if (index < maxRings)
         {
-            //CreateRing(positions[index]);
             CreateRing(NextRingPosition());
             index++;
         }

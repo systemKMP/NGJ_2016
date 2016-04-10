@@ -40,11 +40,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8417a0500e5b1754fbf2a8159e00c16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ring: {fileID: 101960, guid: 4bdca54b7e66364439b811931bf7136d, type: 2}
-  positions:
-  - {x: 0, y: 0, z: 5}
+  ring: {fileID: 145722, guid: 4bdca54b7e66364439b811931bf7136d, type: 2}
   nextRingDistance: 600
-  nextRingRandomXY: 50
+  nextRingRandomXY: 150
   maxRings: 5000000
   initialRingPosition: {x: 0, y: 0, z: 500}
 --- !u!1001 &100100000

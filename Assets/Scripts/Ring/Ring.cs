@@ -38,13 +38,13 @@ public class Ring : MonoBehaviour {
 
     IEnumerator VanishRing()
     {
+        Debug.Log(ringMat);
         color = ringMat.color;
 
         RunCallback();
 
         while (color.a>-0.01f)
         {
-            Debug.Log(color);
             color.a -= 0.7f * Time.deltaTime;
             ringMat.color = color;
             yield return null;
