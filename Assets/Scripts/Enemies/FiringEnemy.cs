@@ -9,15 +9,16 @@ public class FiringEnemy : EnemyBase
     public bool ActivatedFire;
     public bool FiringNow;
 
-    public float MovementSpeedMultiplier;
+    public float SpeedMultiplier;
 
     public GameObject DeathEffect;
 
     public GameObject Projectile;
 
+    public Transform FirePoint;
+
     protected override void Start()
     {
-        MovementSpeed *= UnityEngine.Random.Range(0.9f, 1.0f);
         base.Start();
     }
 
@@ -29,7 +30,7 @@ public class FiringEnemy : EnemyBase
 
         if (!ActivatedFire)
         {
-            MovementSpeedMultiplier = Mathf.MoveTowards(MovementSpeedMultiplier, 1.0f, Time.deltaTime);
+            SpeedMultiplier = Mathf.MoveTowards(SpeedMultiplier, 1.0f, Time.deltaTime);
 
             float rotationSpeedMultiplier = (Player.Instance.transform.position - transform.position).magnitude;
             if (rotationSpeedMultiplier < 6.0f)
@@ -47,18 +48,17 @@ public class FiringEnemy : EnemyBase
 
             if ((Player.Instance.MovController.Velocity.normalized * 50.0f - transform.position).magnitude < 10.0f)
             {
-
                 ActivateFire();
             }
         }
         else
         {
-            MovementSpeedMultiplier = Mathf.MoveTowards(MovementSpeedMultiplier, 0.0f, Time.deltaTime);
+            SpeedMultiplier = Mathf.MoveTowards(SpeedMultiplier, 0.0f, Time.deltaTime);
 
             Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.Head.transform.position - transform.position).normalized, Time.deltaTime * RotationSpeed, Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Direction);
 
-            if (MovementSpeedMultiplier < 0.05f)
+            if (SpeedMultiplier < 0.05f)
             {
                 if (!FiringNow)
                 {
@@ -68,7 +68,7 @@ public class FiringEnemy : EnemyBase
 
         }
 
-        transform.position += MovementSpeed * Direction.normalized * Time.deltaTime * MovementSpeedMultiplier;
+        transform.position += MovementSpeed * Direction.normalized * Time.deltaTime * SpeedMultiplier;
 
     }
 
@@ -78,7 +78,7 @@ public class FiringEnemy : EnemyBase
         for (int i = 0; i < BulletsToFire; i++)
         {
             yield return new WaitForSeconds(FireInterval);
-            Instantiate(Projectile, transform.position, transform.rotation);
+            Instantiate(Projectile, FirePoint.transform.position, Quaternion.LookRotation(Player.Instance.MovController.Head.transform.position + Player.Instance.MovController.Velocity * 1.5f - FirePoint.transform.position));
         }
         FiringNow = false;
         DisableFire();
