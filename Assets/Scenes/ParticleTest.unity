@@ -2238,7 +2238,7 @@ ParticleSystem:
         rgba: 4294955335
       minMaxState: 0
     startSize:
-      scalar: 0.5
+      scalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5813,7 +5813,7 @@ ParticleSystem:
         rgba: 4294955335
       minMaxState: 0
     startSize:
-      scalar: 0.5
+      scalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7604,7 +7604,7 @@ ParticleSystem:
         rgba: 4294955335
       minMaxState: 0
     startSize:
-      scalar: 0.5
+      scalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8894,6 +8894,8 @@ MonoBehaviour:
   IsLoaded: 0
   LoadAudio: {fileID: 1709205669}
   UnloadAudio: {fileID: 1709205670}
+  ShootAudio: {fileID: 0}
+  BarrelTrans: {fileID: 0}
   Velocities: []
   PreviousRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &1709205669
@@ -10659,7 +10661,7 @@ GameObject:
   - 135: {fileID: 1788510603}
   - 23: {fileID: 1788510602}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: BulletTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
