@@ -82,7 +82,7 @@ public class EnemySpawner : MonoBehaviour {
 
         for (int i = 0; i < Enemies.Count; i++)
         {
-            if (Enemies[i].Value < givenValue * 3)
+            if (Enemies[i].Value < givenValue)
             {
                 viableEnemies.Add(Enemies[i]);
             }
