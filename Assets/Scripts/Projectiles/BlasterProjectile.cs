@@ -7,11 +7,7 @@ public class BlasterProjectile : ProjectileBase {
 
     protected override void SetupVelocity()
     {
-<<<<<<< .merge_file_a08972
-        Velocity = transform.rotation * Vector3.forward * StartVelocity + Player.Instance.MovController._velocity;
-=======
         Velocity = transform.rotation * Vector3.forward * StartVelocity + Player.Instance.MovController.Velocity;
->>>>>>> .merge_file_a05796
     }
 
     protected override void Update()

@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158344}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.07, y: 1.281, z: -4.064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
@@ -223,8 +223,8 @@ MonoBehaviour:
   DeathEffect: {fileID: 152420, guid: 84816d01be0d1c8499a43097133f1d30, type: 2}
   Projectile: {fileID: 0}
   FirePoint: {fileID: 0}
-  BulletsToFire: 0
-  FireInterval: 0
+  BulletsToFire: 3
+  FireInterval: 0.3
 --- !u!135 &13508298
 SphereCollider:
   m_ObjectHideFlags: 1
