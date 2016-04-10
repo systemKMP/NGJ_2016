@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< .merge_file_a03784
 guid: 6eab70bfb9a05054ebd22006558dc920
 folderAsset: yes
 timeCreated: 1460260477
+=======
+guid: 20aaeb89e542b994ca113f5e0cc529ee
+folderAsset: yes
+timeCreated: 1460260706
+>>>>>>> .merge_file_a04568
 licenseType: Free
 DefaultImporter:
   userData: 
