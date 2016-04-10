@@ -1171,7 +1171,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children: []
   m_Father: {fileID: 435350}
   m_RootOrder: 4
@@ -2228,7 +2228,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 24e9d399ae68d1542a1e672da65bd53b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c568d6248320c2e4e8e13f167eed3ef3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

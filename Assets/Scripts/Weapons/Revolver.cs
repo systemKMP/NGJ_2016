@@ -35,7 +35,6 @@ public class Revolver : WeaponBase
 
     void FixedUpdate()
     {
-
         if (!IsLoaded)
         {
             var currentRotation = transform.rotation;
@@ -54,7 +53,6 @@ public class Revolver : WeaponBase
                 var up = fwd - Pfwd;
                 currentVelocity = Vector3.Dot(transform.rotation * Vector3.up, up) / Time.fixedDeltaTime;
                 Velocities.Add(currentVelocity);
-
 
                 if (Velocities.Count >= 5)
                 {

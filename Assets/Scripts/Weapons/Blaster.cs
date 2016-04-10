@@ -42,12 +42,15 @@ public class Blaster : WeaponBase
         LoadParticleB.Play();
 
         IsFiring = false;
+        CanFire = false;
     }
 
     public override void StopGrip()
     {
         base.StopGrip();
         _isGripping = false;
+        CanFire = true;
+
         LoadSound.Stop();
 
         LoadParticleA.Stop();
