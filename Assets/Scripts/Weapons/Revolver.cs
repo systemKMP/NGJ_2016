@@ -59,7 +59,7 @@ public class Revolver : WeaponBase
                 if (Velocities.Count >= 5)
                 {
                     float avg = Velocities.Average();
-                    Debug.Log(avg + " - " + currentVelocity);
+
                     if (avg > currentVelocity * 10.0f && avg > 5.0f)
                     {
                         LoadGun();
