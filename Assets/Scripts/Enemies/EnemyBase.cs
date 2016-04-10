@@ -46,10 +46,8 @@ public abstract class EnemyBase : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Something hit");
         if (col.gameObject.layer == 8)
         {
-            Debug.Log("EnemyHit");
             Hit(col.gameObject.GetComponent<ProjectileBase>().Damage);
         }
     }

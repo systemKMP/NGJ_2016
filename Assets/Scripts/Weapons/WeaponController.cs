@@ -1,16 +1,56 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WeaponController : MonoBehaviour {
 
     SteamVR_TrackedObject trackedObj;
     SteamVR_Controller.Device Device;
 
-    public WeaponBase Weapon;
+    public WeaponBase CurrentWeapon;
+
+    public List<WeaponBase> Weapons;
+
+    private int _currentWeapon = 0;
 
     void Awake()
     {
+        CurrentWeapon = Weapons[_currentWeapon];
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        WeaponBase.OnVibrateController += VibrateController;
+    }
+
+    public void GiveNextGun()
+    {
+        CurrentWeapon.StopGrip();
+        CurrentWeapon.StopFire();
+
+        CurrentWeapon.gameObject.SetActive(false);
+
+        _currentWeapon++;
+        if (_currentWeapon == Weapons.Count)
+        {
+            _currentWeapon = 0;
+        }
+
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            if (i == _currentWeapon)
+            {
+                CurrentWeapon = Weapons[i];
+                CurrentWeapon.gameObject.SetActive(true);
+                break;
+            }
+        }
+    }
+
+
+    private void VibrateController(ushort time)
+    {
+        if (Device != null)
+        {
+            Device.TriggerHapticPulse(time);
+        }
     }
 
     void FixedUpdate()
@@ -22,22 +62,37 @@ public class WeaponController : MonoBehaviour {
 
         float intensity = Device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x;
 
+        if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+        {
+            Debug.Log("Touch");
+            GiveNextGun();
+        }
+
+            if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
+        {
+            CurrentWeapon.StartGrip();
+        }
+
+        if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+        {
+            CurrentWeapon.StopGrip();
+        }
 
 
         if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            Weapon.StartFire();
+            CurrentWeapon.StartFire();
         }
 
         if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
         {
-            Weapon.StopFire();
+            CurrentWeapon.StopFire();
         }
 
 
         if (intensity < 0.05f)
         {
-            Weapon.StopFire();
+            CurrentWeapon.StopFire();
         }
     }
 }
