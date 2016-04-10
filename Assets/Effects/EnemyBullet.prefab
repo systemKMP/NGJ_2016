@@ -1,5 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< .merge_file_a06024
+=======
 --- !u!1 &117520
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,6 +19,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+>>>>>>> .merge_file_a08488
 --- !u!1 &119178
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +119,11 @@ GameObject:
   - 198: {fileID: 19884804}
   - 199: {fileID: 19900144}
   m_Layer: 0
+<<<<<<< .merge_file_a06024
+  m_Name: CoreLighting
+=======
   m_Name: ContainingSphere
+>>>>>>> .merge_file_a08488
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +141,11 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 487278}
+<<<<<<< .merge_file_a06024
+  m_RootOrder: 2
+=======
   m_RootOrder: 3
+>>>>>>> .merge_file_a08488
 --- !u!4 &406380
 Transform:
   m_ObjectHideFlags: 1
@@ -147,7 +158,11 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 487278}
+<<<<<<< .merge_file_a06024
+  m_RootOrder: 1
+=======
   m_RootOrder: 2
+>>>>>>> .merge_file_a08488
 --- !u!4 &415728
 Transform:
   m_ObjectHideFlags: 1
@@ -161,6 +176,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 487278}
   m_RootOrder: 0
+<<<<<<< .merge_file_a06024
+=======
 --- !u!4 &442352
 Transform:
   m_ObjectHideFlags: 1
@@ -174,6 +191,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 487278}
   m_RootOrder: 1
+>>>>>>> .merge_file_a08488
 --- !u!4 &452756
 Transform:
   m_ObjectHideFlags: 1
@@ -186,7 +204,11 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 487278}
+<<<<<<< .merge_file_a06024
+  m_RootOrder: 4
+=======
   m_RootOrder: 5
+>>>>>>> .merge_file_a08488
 --- !u!4 &461524
 Transform:
   m_ObjectHideFlags: 1
@@ -199,7 +221,11 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 487278}
+<<<<<<< .merge_file_a06024
+  m_RootOrder: 3
+=======
   m_RootOrder: 4
+>>>>>>> .merge_file_a08488
 --- !u!4 &487278
 Transform:
   m_ObjectHideFlags: 1
@@ -212,7 +238,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 415728}
+<<<<<<< .merge_file_a06024
+=======
   - {fileID: 442352}
+>>>>>>> .merge_file_a08488
   - {fileID: 406380}
   - {fileID: 405220}
   - {fileID: 461524}
@@ -225,7 +254,11 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119178}
+<<<<<<< .merge_file_a06024
+  m_Enabled: 1
+=======
   m_Enabled: 0
+>>>>>>> .merge_file_a08488
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -287,8 +320,19 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119178}
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 1
   m_Enabled: 1
+=======
+  m_IsTrigger: 0
+<<<<<<< .merge_file_a06024
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+=======
+  m_Enabled: 0
+>>>>>>> 6c9f394168249cb2f5ebba23841edbc2b7bb7ab6
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1751,6 +1795,7 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+>>>>>>> .merge_file_a08488
 --- !u!198 &19828770
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -9086,7 +9131,11 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
+<<<<<<< .merge_file_a06024
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+=======
   - {fileID: 2100000, guid: f2bffbeb094e1415586c0fdcaa089b71, type: 2}
+>>>>>>> .merge_file_a08488
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -9240,6 +9289,8 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+<<<<<<< .merge_file_a06024
+=======
 --- !u!199 &19979374
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
@@ -9281,6 +9332,7 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+>>>>>>> .merge_file_a08488
 --- !u!199 &19984694
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1

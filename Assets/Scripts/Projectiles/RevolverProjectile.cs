@@ -30,7 +30,11 @@ public class RevolverProjectile : ProjectileBase
 
     protected override void SetupVelocity()
     {
+<<<<<<< .merge_file_a09408
+        Velocity = transform.rotation * Vector3.forward * StartVelocity + Player.Instance.MovController._velocity;
+=======
         Velocity = transform.rotation * Vector3.forward * StartVelocity + Player.Instance.MovController.Velocity;
+>>>>>>> .merge_file_a09580
     }
 
 
