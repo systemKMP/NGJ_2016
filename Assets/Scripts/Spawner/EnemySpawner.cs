@@ -87,6 +87,10 @@ public class EnemySpawner : MonoBehaviour {
                 viableEnemies.Add(Enemies[i]);
             }
         }
+        if (viableEnemies.Count == 0)
+        {
+            return Enemies[0];
+        }
         return viableEnemies[Random.Range(0, viableEnemies.Count)];
     }
 
