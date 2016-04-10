@@ -48,7 +48,7 @@ public class RingMananger : MonoBehaviour {
         Object obj = Instantiate(ring,position,Quaternion.Euler(90f,0f,0f));
         GameObject gb = (GameObject)obj;
         Ring thering = gb.GetComponent<Ring>();
-        StartCoroutine("FadeInRing", thering);
+        StartCoroutine(FadeInRing(thering));
     }
 
     IEnumerator FadeInRing(Ring thering)

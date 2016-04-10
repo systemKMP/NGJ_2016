@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ring : MonoBehaviour {
+public class Ring : MonoBehaviour
+{
 
     Collider coll;
     MeshRenderer mr;
@@ -15,24 +16,25 @@ public class Ring : MonoBehaviour {
     public delegate void RingComplete();
     public static event RingComplete OnComplete;
 
-    void Start () {
+    void Start()
+    {
         coll = GetComponent<Collider>();
         mr = GetComponent<MeshRenderer>();
         ringMat = mr.material;
         ringManager = GetComponent<RingMananger>();
-	}
-	
-	void Update () {
-	    
-	}
+    }
+
+    void Update()
+    {
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 9 && !is_vanishing)
+        if (other.gameObject.layer == 9 && !is_vanishing)
         {
             is_vanishing = true;
-            StartCoroutine("VanishRing");
-            Player.Instance.Score++;
+            StartCoroutine(VanishRing());
+            Player.Instance.Score += 10;
         }
     }
 
@@ -43,7 +45,7 @@ public class Ring : MonoBehaviour {
 
         RunCallback();
 
-        while (color.a>-0.01f)
+        while (color.a > -0.01f)
         {
             color.a -= 0.7f * Time.deltaTime;
             ringMat.color = color;
@@ -54,7 +56,7 @@ public class Ring : MonoBehaviour {
 
     void RunCallback()
     {
-        
+
         if (OnComplete != null)
         {
             OnComplete();

@@ -31,7 +31,7 @@ public class DeathAndEntry : MonoBehaviour {
 
     public void TheEnd()
     {
-        WhiteTintComponent.StartFadeIn();
+        WhiteTintComponent.StartFadeInWithStay();
         StartFadeInSound();
     }
 
