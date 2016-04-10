@@ -6,7 +6,7 @@ public class MovementController : MonoBehaviour {
     public Transform Head;
     public Transform MovementBase;
 
-    public Vector3 _velocity;
+    public Vector3 Velocity;
 
     public float MaxSpeed;
     public float MaxAcceleration;
@@ -34,7 +34,7 @@ public class MovementController : MonoBehaviour {
     {
         if (Device != null)
         {
-            MovementBase.transform.position += _velocity * Time.deltaTime;
+            MovementBase.transform.position += Velocity * Time.deltaTime;
 
             if (_changeVelocity)
             {
@@ -44,16 +44,16 @@ public class MovementController : MonoBehaviour {
 
                 Vector3 direction = (transform.position - Head.position).normalized;
 
-                accelMultiplier += Vector3.Angle(direction, _velocity) / 180.0f;
-                _velocity = Vector3.MoveTowards(_velocity, direction * MaxSpeed, Time.deltaTime * MaxAcceleration * intensity * accelMultiplier);
+                accelMultiplier += Vector3.Angle(direction, Velocity) / 180.0f;
+                Velocity = Vector3.MoveTowards(Velocity, direction * MaxSpeed, Time.deltaTime * MaxAcceleration * intensity * accelMultiplier);
             }
         }
 
         float prc = 0.0f;
 
-        if (_velocity.magnitude > MinWinSoundSpeed)
+        if (Velocity.magnitude > MinWinSoundSpeed)
         {
-            prc = Mathf.Min((_velocity.magnitude - MinWinSoundSpeed) / (MaxWinSoundSpeed - MinWinSoundSpeed), 1.0f);
+            prc = Mathf.Min((Velocity.magnitude - MinWinSoundSpeed) / (MaxWinSoundSpeed - MinWinSoundSpeed), 1.0f);
         }
 
         WindAudio.volume = prc * MaxAmplitude;
