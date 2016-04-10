@@ -34,7 +34,7 @@ public abstract class WeaponBase : MonoBehaviour {
     protected bool IsFiring;
     protected bool CanFire;
 
-    public void StartFire()
+    public virtual void StartFire()
     {
         IsFiring = true;
     }

@@ -13,6 +13,9 @@ public class BlasterProjectile : ProjectileBase {
     protected override void Update()
     {
         base.Update();
-        transform.localScale += Vector3.one * Time.deltaTime * GrowthSpeed;
+        if (transform.localScale.x < 5)
+        {
+            transform.localScale += Vector3.one * Time.deltaTime * GrowthSpeed;
+        }
     }
 }

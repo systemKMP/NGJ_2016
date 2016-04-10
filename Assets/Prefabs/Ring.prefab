@@ -1,57 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &158880
+--- !u!1 &101960
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 492428}
-  - 33: {fileID: 3333884}
-  - 65: {fileID: 6500528}
-  - 23: {fileID: 2368078}
-  - 114: {fileID: 11420452}
-  - 82: {fileID: 8280280}
-  - 114: {fileID: 11452858}
-  m_Layer: 8
-  m_Name: BlasterFire
+  - 4: {fileID: 492470}
+  - 135: {fileID: 13529804}
+  - 23: {fileID: 2300334}
+  - 33: {fileID: 3358992}
+  - 114: {fileID: 11494900}
+  - 82: {fileID: 8215182}
+  m_Layer: 0
+  m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &492428
+--- !u!4 &492470
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 101960}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: 9.61, y: 10, z: 5}
+  m_LocalScale: {x: 21.489304, y: 21.489363, z: 21.489363}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2368078
+--- !u!23 &2300334
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
+  m_GameObject: {fileID: 101960}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: d83180173d227b24bb0caf2c1da134ee, type: 2}
+  - {fileID: 2100000, guid: 72c562f416a16ad4082547faf83e0cfa, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
@@ -60,37 +59,25 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3333884
+--- !u!33 &3358992
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6500528
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &8280280
+  m_GameObject: {fileID: 101960}
+  m_Mesh: {fileID: 4300000, guid: 31d08050e0ec0c74dadcefa0b036f20b, type: 3}
+--- !u!82 &8215182
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
+  m_GameObject: {fileID: 101960}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c76b5a7794332c44a0c7981d19d6ca2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6e8ca4483cd1d0440b5f47c0c4703765, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.88
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -153,34 +140,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11420452
+--- !u!114 &11494900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
+  m_GameObject: {fileID: 101960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f08d7f55cfb414478d14c493c3935a5, type: 3}
+  m_Script: {fileID: 11500000, guid: f0e028311f708b04ebf24c59105ef124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 720
-  bool_rotate: 1
-  RotateAxis: {x: 0, y: 0, z: 0}
---- !u!114 &11452858
-MonoBehaviour:
+  Audio: {fileID: 8215182}
+--- !u!135 &13529804
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158880}
+  m_GameObject: {fileID: 101960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 243ae402eef274740bdf9d5f40d83395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartVelocity: 100
-  Damage: 5
-  GrowthSpeed: 1
+  serializedVersion: 2
+  m_Radius: 3.62
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -190,5 +173,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 158880}
+  m_RootGameObject: {fileID: 101960}
   m_IsPrefabParent: 1
