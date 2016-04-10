@@ -25,6 +25,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 30, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,10 +41,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ring: {fileID: 145722, guid: 4bdca54b7e66364439b811931bf7136d, type: 2}
-  positions:
-  - {x: 0, y: 0, z: 5}
   nextRingDistance: 600
-  nextRingRandomXY: 50
+  nextRingRandomXY: 150
   maxRings: 5000000
   initialRingPosition: {x: 0, y: 0, z: 500}
 --- !u!1001 &100100000
