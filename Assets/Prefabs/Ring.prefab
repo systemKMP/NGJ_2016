@@ -13,7 +13,7 @@ GameObject:
   - 33: {fileID: 3358992}
   - 114: {fileID: 11494900}
   m_Layer: 0
-  m_Name: FakeRing
+  m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
