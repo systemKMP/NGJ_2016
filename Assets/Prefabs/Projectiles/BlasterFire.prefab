@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f08d7f55cfb414478d14c493c3935a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 720
+  RotateSpeed: 360
   bool_rotate: 1
   RotateAxis: {x: 0, y: 0, z: 0}
 --- !u!114 &11452858
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243ae402eef274740bdf9d5f40d83395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartVelocity: 100
+  StartVelocity: 50
   Damage: 5
   GrowthSpeed: 1
 --- !u!1001 &100100000

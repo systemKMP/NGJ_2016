@@ -17,12 +17,12 @@ public class SimpleEnemy : EnemyBase
     protected override void Update()
     {
         float rotationSpeedMultiplier = (Player.Instance.transform.position - transform.position).magnitude;
-        if (rotationSpeedMultiplier < 6.0f)
+        if (rotationSpeedMultiplier < 5.0f)
         {
             rotationSpeedMultiplier = 0.0f;
         } else
         {
-            rotationSpeedMultiplier = (rotationSpeedMultiplier - 6.0f) / 50.0f;
+            rotationSpeedMultiplier = (rotationSpeedMultiplier - 5.0f) / 40.0f;
         }
 
         Direction = Vector3.RotateTowards(Direction, (Player.Instance.MovController.Head.transform.position - transform.position).normalized, Time.deltaTime * RotationSpeed * rotationSpeedMultiplier, Time.deltaTime);

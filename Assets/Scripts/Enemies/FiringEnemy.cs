@@ -83,7 +83,7 @@ public class FiringEnemy : EnemyBase
         for (int i = 0; i < BulletsToFire; i++)
         {
             yield return new WaitForSeconds(FireInterval);
-            Instantiate(Projectile, FirePoint.transform.position, Quaternion.LookRotation(Player.Instance.MovController.Head.transform.position + Player.Instance.MovController.Velocity * 0.5f - FirePoint.transform.position));
+            Instantiate(Projectile, FirePoint.transform.position, Quaternion.LookRotation(Player.Instance.MovController.Head.transform.position + Player.Instance.MovController.Velocity * 0.75f - FirePoint.transform.position));
         }
         FiringNow = false;
         ActivatedFire = false;
