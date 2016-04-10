@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11420452}
   - 82: {fileID: 8280280}
   - 114: {fileID: 11452858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlasterFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,10 +74,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158880}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &8280280
 AudioSource:
@@ -90,7 +90,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b012834b2df073441b90e97ad7a017e4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.88
   m_Pitch: 1
   Loop: 0
   Mute: 0

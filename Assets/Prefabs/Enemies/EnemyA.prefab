@@ -248,6 +248,7 @@ MonoBehaviour:
   StartHealth: 10
   MovementSpeed: 67
   RotationSpeed: 0.3
+  DeathEffect: {fileID: 152420, guid: 84816d01be0d1c8499a43097133f1d30, type: 2}
 --- !u!136 &13657104
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -6,6 +6,8 @@ public class SimpleEnemy : EnemyBase
 {
     public float RotationSpeed;
 
+    public GameObject DeathEffect;
+
     protected override void Start()
     {
         MovementSpeed *= UnityEngine.Random.Range(0.9f, 1.0f);
@@ -30,6 +32,8 @@ public class SimpleEnemy : EnemyBase
 
     protected override float OnDeath()
     {
+        var dst = Instantiate(DeathEffect, transform.position, Quaternion.identity) as GameObject;
+        Destroy(dst, 2.0f);
         return 0.0f;
     }
 
