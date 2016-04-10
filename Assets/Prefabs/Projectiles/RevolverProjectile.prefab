@@ -108,7 +108,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 0.05
+  m_Time: 0.2
   m_StartWidth: 0.2
   m_EndWidth: 0
   m_Colors:
@@ -140,11 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b01ca210f4af448b41c8dda3544873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartVelocity: 25
+  StartVelocity: 80
   Damage: 10
-  SplitInterval: 0.15
-  SplitCount: 3
-  Spread: 10
+  SplitInterval: 0.12
+  SplitCount: 2
+  SplitAmount: 2
+  Spread: 4
 --- !u!135 &13501568
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -155,7 +156,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
