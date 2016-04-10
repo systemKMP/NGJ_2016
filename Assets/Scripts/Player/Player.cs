@@ -6,6 +6,8 @@ using System;
 
 public class Player : MonoBehaviour
 {
+    public MusicController MC;
+
     public Text ScoreField;
     public WeaponController WeapController;
     public MovementController MovController;
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
         LastScore = Score;
         DAE.TheEnd();
         StartCoroutine(EndGame());
+        MC.TargetVolume = 0.0f;
     }
 
     private IEnumerator EndGame()

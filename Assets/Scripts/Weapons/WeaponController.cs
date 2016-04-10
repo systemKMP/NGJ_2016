@@ -7,6 +7,8 @@ public class WeaponController : MonoBehaviour {
     SteamVR_TrackedObject trackedObj;
     SteamVR_Controller.Device Device;
 
+    public AudioSource WeaponChangeSound;
+
     public WeaponBase CurrentWeapon;
 
     public List<WeaponBase> Weapons;
@@ -22,6 +24,8 @@ public class WeaponController : MonoBehaviour {
 
     public void GiveNextGun()
     {
+        WeaponChangeSound.Play();
+
         CurrentWeapon.StopGrip();
         CurrentWeapon.StopFire();
 

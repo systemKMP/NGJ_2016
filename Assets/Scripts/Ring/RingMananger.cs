@@ -20,6 +20,9 @@ public class RingMananger : MonoBehaviour {
         Ring.OnComplete += RingComplete;
     }
 
+    public MusicController MC;
+    public EnemySpawner ES;
+
 	// Use this for initialization
 	void Start () {
 
@@ -81,6 +84,8 @@ public class RingMananger : MonoBehaviour {
     
     public void RingComplete()
     {
+        MC.TargetVolume = 0.3f;
+        ES.gameObject.SetActive(true);
         if (index < maxRings)
         {
             CreateRing(NextRingPosition());
